@@ -76,11 +76,7 @@ Authors: Nohelya Borrero Arias and Esther Awusah· Two-person graduate project, 
 
 Why it matters
 
-Converting captured CO₂ and hydrogen into methanol turns a waste stream into a fuel and chemical feedstock. The reaction depends on a catalyst that must do three things at once:
-
-convert a meaningful share of the CO₂,
-send that carbon to methanol rather than to by-products,
-avoid methane, which wastes carbon and is itself a potent greenhouse gas.
+Converting captured CO₂ and hydrogen into methanol turns a waste stream into a fuel and chemical feedstock. The reaction depends on a catalyst that must do three things at once: convert a meaningful share of the CO₂, send that carbon to methanol rather than to by-products, avoid methane, which wastes carbon and is itself a potent greenhouse gas.
 
 Candidates are tested a few dozen at a time, each run costs reactor time and materials, and most formulations underperform. The recurring decision is which formulation deserves the next experiment.
 
@@ -99,8 +95,8 @@ Check for confounding: the support switched to zirconia at round 2 and never cha
 Compare models: seven classifiers (random forest, bagging, gradient boosting, decision tree, SVM, voting classifier, small neural network). Each is tested with a rolling design that trains on earlier rounds and predicts the next, which mirrors how a lab actually works.
 Test shortlist stability: 50 bootstrap refits check whether top-ranked candidates stay near the top.
 Run an economic and footprint sensitivity check: margin and CO₂-equivalent per kg of methanol under three scenarios, using placeholder inputs.
-Results
 
+Results
 Models are useful for two of the three outcomes (rolling balanced accuracy; chance = 0.33):
 
 Outcome	Best model	Score
@@ -112,15 +108,17 @@ The yield gain came from one change. Median yield rose from 0.05% to 3.2% of fed
 Controlling for support reverses 13 of 21 metal effects. For example, indium appears to lower methanol selectivity overall but raises it within a fixed support. Only three reversals have p < 0.05, uncorrected for multiple comparisons, so they are hypotheses to test, not established chemistry.
 One candidate is stable. Candidate 103 stayed in the methanol top five in 88% of 50 refits. Candidate 118 stayed in the low-methane top five in 70%. These percentages measure ranking stability, not performance.
 Energy matters more than the catalyst. Under placeholder inputs, only the favorable scenario is profitable (+$0.17/kg vs. −$0.59 and −$1.94). The footprint ranges from 0.27 to 4.25 kg CO₂e per kg of methanol. Hydrogen and electricity drive both.
+
 Recommendations
 Advance Candidates 103 and 118 to lab validation, measuring conversion, methanol and methane together.
 Test supports side by side within one round before standardizing on zirconia.
 Aim the next round of experiments at methane.
 Replace the placeholder economic and footprint inputs with measured values before any investment case.
+
 Limitations
 No candidate has been tested in the lab.
 The confounding check assumes a linear adjustment captures the support effect.
-Catalyst lifetime, deactivation, safety and manufacturability were not measured.
+Catalyst lifetime, deactivation, safety, and manufacturability were not measured.
 All economic and life-cycle inputs are placeholders, not plant data.
 The models can prioritize experiments. They do not establish causal chemistry or justify commercial commitment.
 Energy use, catalyst recovery, by-product toxicity and cost were not assessed.
